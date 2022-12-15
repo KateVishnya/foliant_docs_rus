@@ -1,0 +1,52 @@
+title: articles_foliant
+
+chapters:
+  - index.md
+  - quickstart.md
+  - table_preproessors.md
+  - example/admonitions_example.md
+
+
+preprocessors:
+    - includes
+    - admonitions
+
+backend_config:
+    mkdocs:
+        mkdocs.yml:
+            theme:
+              name: material
+              custom_dir: !path ./theme/
+              palette:
+                  primary: "rgba(0, 0, 0, 0.87)"
+                  accent: light blue
+              font:
+                  text: PT Sans
+                  code: PT Mono
+              logo: assets/images/octopus-white.svg
+              favicon: assets/images/octopus-black-32.ico
+              features:
+                  - search.suggest
+                  - search.highlight
+                  - navigation.top
+              icon:
+                repo: fontawesome/brands/github-alt
+            extra:
+                social:
+                    -   icon: fontawesome/brands/github
+                        link: https://github.com/foliant-docs/foliant
+                    -   icon: fontawesome/regular/file-pdf
+                        link: /docs/assets/foliant-docs.pdf
+                analytics:
+                  provider: google
+                  property: UA-120535275-2
+            markdown_extensions:
+                - meta
+                - def_list
+                - footnotes
+                - pymdownx.highlight
+                - toc:
+                    permalink: true
+                - admonition
+                - pymdownx.details
+                - pymdownx.superfences
